@@ -1,0 +1,33 @@
+@import "bootstrap";
+
+a.navbar-brand {
+    padding: 9px 15px;
+
+    img {
+        height: 32px;
+    }
+}
+
+.dropdown:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu {
+    position: relative;
+
+    .dropdown-menu {
+        top: -8px;
+        left: 100%;
+    }
+
+    &:hover > .dropdown-menu {
+        display: block;
+    }
+}
+
+.caret {
+    &.right {
+        border: $caret-width-base solid transparent;
+        border-left: $caret-width-base solid;
+    }
+}

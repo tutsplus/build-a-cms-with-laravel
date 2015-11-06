@@ -1,0 +1,5 @@
+suites:
+    main:
+        namespace: SundaySim
+        psr4_prefix: SundaySim
+        src_path: app
