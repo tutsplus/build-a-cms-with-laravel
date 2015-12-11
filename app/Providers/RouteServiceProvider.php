@@ -42,13 +42,15 @@ class RouteServiceProvider extends ServiceProvider
             require app_path('Http/routes.php');
         });
 
-        foreach (Page::all() as $page) {
-            $router->get($page->uri, ['as' => $page->name, function () use ($page, $router) {
-                return $this->app->call('SundaySim\Http\Controllers\PageController@show', [
-                    'page' => $page,
-                    'parameters' => $router->current()->parameters()
-                ]);
-            }]);
+        if (! app()->runningInConsole()) {
+            foreach (Page::all() as $page) {
+                $router->get($page->uri, ['as' => $page->name, function () use ($page, $router) {
+                    return $this->app->call('SundaySim\Http\Controllers\PageController@show', [
+                        'page' => $page,
+                        'parameters' => $router->current()->parameters()
+                    ]);
+                }]);
+            }
         }
     }
 }
