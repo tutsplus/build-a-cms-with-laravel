@@ -30,4 +30,9 @@ class Page extends Node
     {
         $this->attributes['template'] = $value ?: null;
     }
+
+    public function setHiddenAttribute($value)
+    {
+        $this->attributes['hidden'] = $value ?: 0;
+    }
 }
