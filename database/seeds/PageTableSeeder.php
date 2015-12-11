@@ -21,7 +21,10 @@ class PageTableSeeder extends Seeder
                 'parent_id' => null,
                 'lft' => 3,
                 'rgt' => 8,
-                'depth' => 0
+                'depth' => 0,
+                'hidden' => 0,
+                'template' => null,
+                'name' => null
             ],
             [
                 'title' => 'Contact',
@@ -30,7 +33,10 @@ class PageTableSeeder extends Seeder
                 'parent_id' => 1,
                 'lft' => 4,
                 'rgt' => 5,
-                'depth' => 1
+                'depth' => 1,
+                'hidden' => 0,
+                'template' => null,
+                'name' => null
             ],
             [
                 'title' => 'FAQ',
@@ -39,25 +45,46 @@ class PageTableSeeder extends Seeder
                 'parent_id' => 1,
                 'lft' => 6,
                 'rgt' => 7,
-                'depth' => 1
+                'depth' => 1,
+                'hidden' => 0,
+                'template' => null,
+                'name' => null
             ],
             [
-                'title' => 'Media',
-                'uri' => 'media',
-                'content' => 'This is the media page.',
+                'title' => 'Home',
+                'uri' => '/',
+                'content' => 'This is the home page.',
                 'parent_id' => null,
                 'lft' => 1,
                 'rgt' => 2,
-                'depth' => 0
+                'depth' => 0,
+                'hidden' => 0,
+                'template' => 'home',
+                'name' => null
             ],
             [
-                'title' => 'Characters',
-                'uri' => 'characters',
-                'content' => 'This is the characters page.',
+                'title' => 'Blog',
+                'uri' => 'archive',
+                'content' => 'This is the blog page.',
                 'parent_id' => null,
                 'lft' => 9,
-                'rgt' => 10,
-                'depth' => 0
+                'rgt' => 12,
+                'depth' => 0,
+                'hidden' => 0,
+                'template' => 'blog',
+                'name' => null
+            ],
+            [
+                'title' => 'Blog Post',
+                'uri' => 'article/{id}/{slug}',
+                'content' => 'This is the blog post page.',
+                'parent_id' => 5,
+                'lft' => 10,
+                'rgt' => 11,
+                'depth' => 1,
+                'hidden' => 1,
+                'template' => 'blog.post',
+                'name' => 'blog.post'
             ],
         ]);
     }
