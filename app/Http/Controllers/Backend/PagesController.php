@@ -52,7 +52,7 @@ class PagesController extends Controller
      */
     public function store(Requests\StorePageRequest $request)
     {
-        $page = $this->pages->create($request->only('title', 'uri', 'name', 'content', 'template', 'request'));
+        $page = $this->pages->create($request->only('title', 'uri', 'name', 'content', 'template', 'hidden'));
 
         $this->updatePageOrder($page, $request);
 
@@ -91,7 +91,7 @@ class PagesController extends Controller
             return $response;
         }
 
-        $page->fill($request->only('title', 'uri', 'name', 'content', 'template', 'request'))->save();
+        $page->fill($request->only('title', 'uri', 'name', 'content', 'template', 'hidden'))->save();
 
         return redirect(route('backend.pages.edit', $page->id))->with('status', 'Page has been updated.');
     }
